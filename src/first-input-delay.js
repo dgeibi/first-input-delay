@@ -43,7 +43,10 @@
    */
   function recordFirstInputDelay(delay, evt) {
     if (!firstInputEvent) {
-      firstInputEvent = evt;
+      firstInputEvent = {};
+      firstInputEvent.timeStamp = evt.timeStamp;
+      firstInputEvent.type = evt.type;
+      firstInputEvent.cancelable = evt.cancelable;
       firstInputDelay = delay;
       firstInputTimeStamp = new Date;
 
